@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>M<span>oje</span> H<span>obby</span></h2>
+            </div>
+
+            <div class="links">
+                <ul>
+                    <li><a href="index.html" class="curent">Strona główna</a></li>
+                    <li><a href="lotnictwo.html">Lotnictwo</a></li>
+                    <li><a href="programowanie.html">Programowanie</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="main">
+            <div class="main-content">
+                <h1>Witaj na mojej stronie</h1>
+                <p>Na tej stronie znajdziesz informacje o moich dwóch pasjach: lotnictwie i programowaniu.</p>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="about-content">
+                <h2>O mnie</h2>
+                <p>Nazywam się Maciej Czarnecki i jestem uczniem <a href="http://zsp2lowicz.pl/">Zespołu Szkół
+                        Ponadpodstawowych nr 2 im. Tadeusza Kościuszki w Łowiczu</a>. Kształcę się na profilu technik
+                    informatyk. Interesuję się lotnictwem i
+                    programowaniem. Na tej stronie chciałbym podzielić się moimi pasjami.</p>
+            </div>
+        </section>
+
+        <section class="hobbies">
+            <h2>Moje pasje</h2>
+            <div class="hobby aviation">
+                <img src="/obrazy/plane-svgrepo-com.svg" alt="ikona samolotu">
+                <h2>Lotnictwo</h2>
+                <p>Kocham samoloty. Fascynuje mnie ich konstrukcja, historia oraz technologia.</p>
+                <a href="lotnictwo.html">Czytaj więcej...</a>
+            </div>
+
+            <div class="hobby programming">
+                <img src="/obrazy/code-svgrepo-com.svg" alt="ikona kodu">
+                <h2>Programowanie</h2>
+                <p>Programowanie to moja druga pasja. Uwielbiam tworzyć nowe aplikacje i strony internetowe.</p>
+                <a href="programowanie.html">Czytaj więcej...</a>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Kontakt</h2>
+            <form action="mailto:maciejczarneckitin@gmail.com" method="post" enctype="text/plain">
+                <label for="name">Imię:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Wyślij</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>Maciej Czarnecki - Chąśno 02.02.2025r</p>
+        </footer>
+
+    </main>
+</body>
+
+</html>
