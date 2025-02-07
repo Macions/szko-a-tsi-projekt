@@ -1,6 +1,28 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik+Dirt:regular);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    --main-color: rgb(61, 216, 22);
+}
+
+header {
+    border: 1px solid #000;
+    padding: 1em 6em;
+}
+
+header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+}
