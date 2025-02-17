@@ -437,7 +437,7 @@ main #my_hobbies h2.main_text::after {
     background-color: #420097;
     top: 50%;
     transform: translateY(-50%);
-    animation: changewidt 1s forwards;
+    /* animation: changewidt 1s forwards; */
 }
 
 @keyframes changewidt {
