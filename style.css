@@ -412,7 +412,7 @@ main #my_hobbies h2.main_text::before {
     background-color: #420097;
     top: 50%;
     transform: translateY(-50%);
-    animation: changewidth 1s  reverse infinite;
+    /* animation: changewidth 1s  reverse infinite; */
 }
 
 @keyframes changewidth {
