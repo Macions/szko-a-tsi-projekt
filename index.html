@@ -5,7 +5,561 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Rubik+Dirt:regular);
+        @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+        @import url(https://fonts.googleapis.com/css?family=Merienda:300,regular,500,600,700,800,900);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --main-color: rgb(61, 216, 22);
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background: linear-gradient(to bottom, #6306d9, #6e06f7);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            top: -50%;
+            left: -25%;
+            transform: rotate(20deg);
+            animation: rotating 30s linear infinite;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            width: 120%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 80%);
+            bottom: -10%;
+            left: -10%;
+            transform: rotate(-10deg);
+            animation: rotating2 30s linear infinite;
+        }
+
+        header nav {
+            padding: 1em 2em 0em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+            gap: 4rem;
+        }
+
+        header nav li {
+            position: relative;
+            transition-duration: .4s;
+        }
+
+        header nav li::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            border-radius: 3px;
+            bottom: -2px;
+            transition-duration: .3s;
+            animation: all 0.3s ease-in-out;
+        }
+
+        header nav li:hover::before {
+            width: 100%;
+        }
+
+        header nav li a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            position: relative;
+            color: white;
+        }
+
+        header nav .logo h3 {
+            font-size: 22px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .theme_switch {
+            position: fixed;
+            right: 1em;
+            top: 4em;
+            width: auto;
+        }
+
+        .theme_switch #select_theme {
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            padding: 6px 10px;
+            border-radius: 10px;
+        }
+
+        .theme_switch #select_theme img {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            fill: red !important;
+            stroke: red;
+            stroke-width: 2px;
+        }
+
+        section.top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .top .top-content {
+            text-align: center;
+        }
+
+        .top .top-content .circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            left: 0%;
+            bottom: 20%;
+            border: 1px solid #fff;
+        }
+
+        header .top .top-content h1 {
+            font-size: 3rem;
+            font-weight: 600;
+        }
+
+        header .top .top-content h2 {
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+
+        main #about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            width: 100%;
+            padding: 1em;
+            overflow: hidden;
+            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.025), rgba(110, 6, 247, 0.129));
+            position: relative;
+        }
+
+        main #about::before,
+        main #about::after {
+            content: "";
+            position: absolute;
+            width: 30%;
+            height: 35%;
+            border-radius: 100%;
+            background: linear-gradient(to bottom, #6306d9, #6e06f7);
+            opacity: 0.1;
+            z-index: -2;
+        }
+
+        main #about::before {
+            top: -80px;
+            right: 30%;
+        }
+
+        main #about::after {
+            bottom: -80px;
+            left: -100px;
+        }
+
+        main #about .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main #about img {
+            width: 60%;
+            border-radius: 20%;
+        }
+
+        main #about .about-content {
+            width: 50%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 5em 3em;
+            text-align: center;
+            position: relative;
+        }
+
+        main #about .about-content::before {
+            content: "";
+            position: absolute;
+            width: 120%;
+            left: -4em;
+            height: 100%;
+            background-color: white;
+            opacity: 0.7;
+            border-radius: 100px;
+            transform: rotate(174deg);
+            z-index: 0;
+        }
+
+        main #about .about-content h2 {
+            color: #6e06f7;
+            font-size: 2.3rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        main #about .about-content a {
+            color: #6306d9;
+            z-index: 2;
+        }
+
+        main #about .about-content p {
+            word-wrap: break-word;
+            font-size: 1.1rem;
+            color: #6306d9;
+            z-index: 2;
+        }
+
+        main #my_hobbies {
+            padding: 0em 4em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.05), rgba(110, 6, 247, 0.15));
+        }
+
+        main #my_hobbies .all_hobbies {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        main #my_hobbies .all_hobbies .hobby {
+            flex: 1 1 300px;
+            text-align: center;
+            padding: 20px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 15px;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        main #my_hobbies .all_hobbies .hobby:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        main #my_hobbies .all_hobbies .hobby img {
+            width: 60px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        main #my_hobbies .all_hobbies .hobby h2 {
+            font-size: 1.6rem;
+            color: black;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        main #my_hobbies .all_hobbies .hobby p {
+            font-size: 1rem;
+            color: black;
+            opacity: 0.85;
+            margin-bottom: 15px;
+        }
+
+        main #my_hobbies .all_hobbies .hobby a {
+            text-decoration: none;
+            color: white;
+            background-color: #38037e96;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        main #my_hobbies .all_hobbies .hobby a:hover {
+            background-color: #5404c5;
+        }
+
+        main #my_hobbies h2.main_text {
+            text-align: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #420097;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            width: 100%;
+        }
+
+        main #my_hobbies h2.main_text::before {
+            content: "";
+            position: absolute;
+            width: 37%;
+            left: auto;
+            left: 0;
+            height: 2px;
+            background-color: #420097;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        main #my_hobbies h2.main_text::after {
+            content: "";
+            position: absolute;
+            width: 37%;
+            right: 0;
+            height: 2px;
+            background-color: #420097;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #find_me {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 70vh;
+            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.025), rgba(110, 6, 247, 0.129));
+            position: relative;
+            overflow: hidden;
+        }
+
+        #find_me h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #6e06f7;
+            position: relative;
+            margin: 0;
+        }
+
+        #find_me .social-media {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        #find_me .social-media a {
+            text-decoration: none;
+            color: #6e06f7;
+            font-size: 2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        #find_me .social-media a img {
+            width: 10rem;
+            height: 10rem;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        #find_me .social-media a img:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        #contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.05), rgba(110, 6, 247, 0.15));
+            height: auto;
+        }
+
+        #contact h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #6e06f7;
+            margin-bottom: 1em;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2em;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        #contact label {
+            font-size: 1.1rem;
+            color: #6306d9;
+            position: absolute;
+            left: 50px;
+            padding: 0px 5px;
+            background: #f2e9fd;
+            border-radius: 20px;
+        }
+
+        #contact label.name {
+            top: 1.2rem;
+        }
+
+        #contact label.email {
+            top: 6.8rem;
+        }
+
+        #contact label.message {
+            top: 12.4rem;
+        }
+
+        #contact input,
+        #contact textarea {
+            padding: 1em;
+            border: 1px solid #6e06f7;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            font-size: 1rem;
+            color: #420097;
+            outline: none;
+            transition: border 0.3s ease-in-out;
+        }
+
+        #contact textarea {
+            padding: 0.9em 1.5em;
+            height: 150px;
+            resize: none;
+            width: 100%;
+        }
+
+        #contact input:focus,
+        #contact textarea:focus {
+            border-color: #4100976e;
+            box-shadow: 0px 0px 10px #420097;
+
+        }
+
+        #contact button {
+            padding: 1em 2em;
+            background-color: #6e06f7;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #contact button:hover {
+            background-color: #420097;
+        }
+
+        #contact .form-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+        }
+
+
+        footer {
+            padding: 10px;
+            text-align: center;
+            font-size: 17px;
+            background-color: #333;
+            color: white;
+        }
+
+        @keyframes rotating {
+            0% {
+                transform: rotate(20deg);
+            }
+
+            100% {
+                transform: rotate(380deg);
+            }
+        }
+
+        @keyframes rotating2 {
+            0% {
+                transform: rotate(-10deg);
+            }
+
+            100% {
+                transform: rotate(-190deg);
+            }
+        }
+
+        @keyframes changewidth {
+            0% {
+                width: 0%;
+            }
+
+            50% {
+                width: 37%;
+            }
+
+            100% {
+                width: 0%;
+            }
+        }
+
+        @keyframes changewidt {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 37%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,10 +581,6 @@
             </div>
         </nav>
 
-        <!-- <section class="theme_switch">
-        <div id="select_theme"><img src="/obrazy/svg icons/sun-svgrepo-com.svg" alt="sun"><img src="obrazy/svg icons/moon-svgrepo-com.svg" alt="moon"></div>
-    </section> -->
-
         <section class="top">
             <div class="top-content">
                 <h1>Witaj na mojej stronie</h1>
@@ -42,7 +592,6 @@
 
         <section id="about">
             <div class="image">
-                <!-- <img src="/obrazy/Warstwa 1.png" alt="Moje zdjęcie"> -->
                 <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Warstwa 1.png" alt="">
             </div>
             <div class="about-content">
@@ -60,41 +609,41 @@
             <div class="all_hobbies">
 
                 <div class="hobby aviation">
-                    <!-- <img src="/obrazy/svg icons/plane-svgrepo-com.svg" alt="ikona samolotu"> -->
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/plane-svgrepo-com.svg" alt="">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/plane-svgrepo-com.svg"
+                        alt="">
                     <h2>Lotnictwo</h2>
                     <p>Kocham samoloty. Fascynuje mnie ich konstrukcja, historia oraz technologia.</p>
                     <a href="lotnictwo.html">Czytaj więcej...</a>
                 </div>
 
                 <div class="hobby programming">
-                    <!-- <img src="/obrazy/svg icons/code-svgrepo-com.svg" alt="ikona kodu"> -->
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/code-svgrepo-com.svg" alt="">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/code-svgrepo-com.svg"
+                        alt="">
                     <h2>Programowanie</h2>
                     <p>Programowanie to moja druga pasja. Uwielbiam tworzyć nowe aplikacje i strony internetowe.</p>
                     <a href="programowanie.html">Czytaj więcej...</a>
                 </div>
 
                 <div class="hobby cybersecurity">
-                    <!-- <img src="/obrazy/svg icons/shield-alt-1-svgrepo-com.svg" alt="ikona tarczy"> -->
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/shield-alt-1-svgrepo-com.svg" alt="">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/shield-alt-1-svgrepo-com.svg"
+                        alt="">
                     <h2>Cyberbezpieczeństwo</h2>
                     <p>W dzisiejszych czasach cyberbezpieczeństwo jest bardzo ważne. Interesuję się tym tematem i chcę
                         dowiedzieć się jak działa.</p>
                     <a href="cyberbezpieczenstwo.html">Czytaj więcej...</a>
                 </div>
-<br>
+                <br>
                 <div class="hobby films">
-                    <!-- <img src="/obrazy/svg icons/film-3-svgrepo-com.svg" alt="ikona filmu"> -->
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/film-3-svgrepo-com.svg" alt="">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/film-3-svgrepo-com.svg"
+                        alt="">
                     <h2>Filmy</h2>
                     <p>W wolnym czasie lubię oglądać filmy. Moje ulubione gatunki to: science fiction i fantasy.</p>
                     <a href="filmy.html">Czytaj więcej...</a>
                 </div>
 
                 <div class="hobby books">
-                    <!-- <img src="/obrazy/svg icons/book-svgrepo-com.svg" alt="ikona książki"> -->
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/book-svgrepo-com.svg" alt="">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/book-svgrepo-com.svg"
+                        alt="">
                     <h2>Książki</h2>
                     <p>Lubię czytać książki. Uwielbiam fantastykę i książki przygodowe.</p>
                     <a href="ksiazki.html">Czytaj więcej...</a>
@@ -107,8 +656,8 @@
             <h2>Śledź mnie</h2>
             <div class="social-media">
                 <a href="https://github.com/Macions/">
-                    <!-- <img src="/obrazy/svg icons/github-svgrepo-com.svg" alt="ikona github">Github -->
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/github-svgrepo-com.svg" alt="">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/github-svgrepo-com.svg"
+                        alt="">
                 </a>
             </div>
         </section>
