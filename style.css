@@ -136,7 +136,8 @@ main #about {
     background-color: #0A0E07;
     background: linear-gradient(to bottom, #0A0E07, #0A0E07, black);
     position: relative;
-    color: white; /* Biały tekst będzie dobrze kontrastować */
+    color: white;
+    /* Biały tekst będzie dobrze kontrastować */
 }
 
 
@@ -173,9 +174,12 @@ main #about .image::before {
 }
 
 @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(10px);
     }
+
     50% {
         transform: translateY(-10px);
     }
@@ -214,12 +218,12 @@ main #about .about-content p {
 
 
 main #fav_planes {
-    position: relative;
-    padding: 2rem;
+
+    /* padding: 2rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to bottom, black, black, #1D2615);
+    background: linear-gradient(to bottom, black, black, #4682B4);
     z-index: 101;
 }
 
@@ -336,8 +340,78 @@ main #fav_planes .planes .plane:nth-child(1) img.crown {
 }
 
 
-main #atc{
-    background-image: url('obrazy/bg.jpg');
-    height: 90vh;
+main #atc {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    overflow: hidden;
+    /* Gradientowe przejście od koloru do obrazu */
+    background: linear-gradient(to bottom, #4682B4, #4683b480);
+    /* background-size: cover; */
+    /* background-position: center; */
 }
 
+main #atc img.cloud {
+    position: absolute;
+    z-index: 0;
+    opacity: 0.1;
+    animation: moveClouds linear infinite;
+}
+
+@keyframes moveClouds {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(140vw); /* Chmury przesuwają się w prawo */
+    }
+}
+
+main #atc img.cloud:nth-child(1){
+    top: 5%;
+    left: -50%;
+    width: 20%;
+    animation-duration: 60s;
+}
+
+main #atc img.cloud:nth-child(2){
+    top: 15%;
+    left: -30%;
+    width: 30%;
+    animation-duration: 45s;
+}
+
+main #atc h2,
+main #atc p {
+    z-index: 3;
+}
+
+main #atc h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+    color: rgb(0, 95, 238);
+    padding: 10px 20px;
+    border: 10px solid rgb(0, 95, 238);
+    border-radius: 40px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+}
+
+main #atc p {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    font-weight: 300;
+    max-width: 65%;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 20px;
+}
