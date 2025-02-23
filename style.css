@@ -223,7 +223,7 @@ main #fav_planes {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(to bottom, black, black, #4682B4);
+    background: linear-gradient(to bottom, black, black, #2e6b9c);
     z-index: 101;
 }
 
@@ -353,7 +353,7 @@ main #atc {
     font-weight: bold;
     overflow: hidden;
     /* Gradientowe przejście od koloru do obrazu */
-    background: linear-gradient(to bottom, #4682B4, #4683b480);
+    background: linear-gradient(to bottom, #2e6b9c, #75b4e7);
     /* background-size: cover; */
     /* background-position: center; */
 }
@@ -399,9 +399,9 @@ main #atc h2 {
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 15px;
-    color: rgb(0, 95, 238);
+    color: white;
     padding: 10px 20px;
-    border: 10px solid rgb(0, 95, 238);
+    border: 10px solid white;
     border-radius: 40px;
     background-color: transparent;
     backdrop-filter: blur(10px);
