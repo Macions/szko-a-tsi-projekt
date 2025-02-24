@@ -11,6 +11,20 @@
         @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
         @import url(https://fonts.googleapis.com/css?family=Merienda:300,regular,500,600,700,800,900);
 
+        :root {
+            --main-color: rgb(61, 216, 22);
+            --header-bg-gradient: linear-gradient(to bottom, #a32100, #f5832c);
+            --header-text-color: white;
+            --nav-gap: 4rem;
+            --nav-font-size: 1.2rem;
+            --section-padding: 1em;
+            --section-bg-gradient: linear-gradient(to bottom, #f5832c, white);
+            --project-bg: #f8f8f8;
+            --project-shadow: 0 0px 40px rgba(163, 163, 163, 0.9);
+            --footer-bg: #74747449;
+            --footer-text-color: rgb(0, 0, 0);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -22,44 +36,40 @@
             overflow-x: hidden;
         }
 
-        :root {
-            --main-color: rgb(61, 216, 22);
-        }
-
         header {
             display: flex;
             flex-direction: column;
             height: 100vh;
-            background: linear-gradient(to bottom, #a32100, #f5832c);
-            color: white;
+            background: var(--header-bg-gradient);
+            color: var(--header-text-color);
             padding: 0;
             position: relative;
         }
 
-        header::before {
+        header::before,
+        header::after {
             content: "";
             position: absolute;
+            z-index: 2;
+            animation: rotating 30s linear infinite;
+        }
+
+        header::before {
             width: 150%;
             height: 100%;
             background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
             top: -50%;
             left: -25%;
             transform: rotate(90deg);
-            animation: rotating 30s linear infinite;
-            z-index: 1230;
         }
 
         header::after {
-            content: "";
-            position: absolute;
-            z-index: 1230;
             width: 120%;
             height: 60%;
             background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 2%, transparent 98%);
             bottom: -10%;
             left: -10%;
             transform: rotate(20deg);
-            animation: rotating2 30s linear infinite;
         }
 
         @keyframes rotating {
@@ -72,27 +82,18 @@
             }
         }
 
-        @keyframes rotating2 {
-            0% {
-                transform: rotate(-10deg);
-            }
-
-            100% {
-                transform: rotate(-190deg);
-            }
-        }
-
         header nav {
             padding: 1em 2em 0em 2em;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 5;
         }
 
         header nav ul {
             display: flex;
             list-style: none;
-            gap: 4rem;
+            gap: var(--nav-gap);
         }
 
         header nav li {
@@ -100,19 +101,16 @@
             transition-duration: .4s;
         }
 
-
         header nav li::before {
             content: "";
             position: absolute;
             width: 0;
             height: 2px;
-            background-color: white;
+            background-color: var(--header-text-color);
             border-radius: 3px;
             bottom: -2px;
             transition: width 0.3s ease-in-out;
-            /* poprawiona animacja */
         }
-
 
         header nav li:hover::before {
             width: 100%;
@@ -121,9 +119,8 @@
         header nav li a {
             padding: 10px;
             text-decoration: none;
-            font-size: 1.2rem;
-            position: relative;
-            color: white;
+            font-size: var(--nav-font-size);
+            color: var(--header-text-color);
         }
 
         header nav .logo h3 {
@@ -153,9 +150,6 @@
             width: 30px;
             height: 30px;
             cursor: pointer;
-            fill: red !important;
-            stroke: red;
-            stroke-width: 2px;
         }
 
         section.top {
@@ -197,9 +191,9 @@
             align-items: center;
             height: 80vh;
             width: 100%;
-            padding: 1em;
+            padding: var(--section-padding);
             overflow: hidden;
-            background: linear-gradient(to bottom, #f5832c, white);
+            background: var(--section-bg-gradient);
             position: relative;
         }
 
@@ -238,7 +232,6 @@
 
         main #about_hobby .about-content {
             width: 50%;
-            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -268,7 +261,8 @@
             z-index: 2;
         }
 
-        main #about_hobby .about-content a {
+        main #about_hobby .about-content a,
+        main #about_hobby .about-content p {
             color: black;
             z-index: 2;
         }
@@ -276,8 +270,6 @@
         main #about_hobby .about-content p {
             word-wrap: break-word;
             font-size: 1.1rem;
-            color: black;
-            z-index: 2;
         }
 
         main #selected_projects {
@@ -288,8 +280,7 @@
             text-align: center;
             font-size: 2.8rem;
             font-weight: 800;
-            margin-top: 40px;
-            margin-bottom: 40px;
+            margin: 40px 0;
             position: relative;
             width: 100%;
             color: black;
@@ -334,10 +325,9 @@
             padding: 2em;
             width: 100%;
             border-radius: 20px;
-            background: #f8f8f8;
-            box-shadow: 0 0px 40px rgba(163, 163, 163, 0.9);
+            background: var(--project-bg);
+            box-shadow: var(--project-shadow);
             min-height: 40rem;
-
             z-index: 20;
         }
 
@@ -371,12 +361,10 @@
         }
 
         main #cybersecurity {
-            /* background: linear-gradient(to bottom,  rgb(0, 37, 0), black); */
             background-color: rgb(255, 255, 255);
             padding: 20px 10px;
             position: relative;
             min-height: 100vh;
-            /* overflow: hidden; */
         }
 
         main #cybersecurity::before,
@@ -399,7 +387,6 @@
         main #cybersecurity::after {
             bottom: 1rem;
             left: -200px;
-
         }
 
         main #cybersecurity h2.main_text {
@@ -432,6 +419,14 @@
             line-height: 1.6;
             color: black;
         }
+
+        footer {
+            padding: 10px;
+            text-align: center;
+            font-size: 17px;
+            background-color: var(--footer-bg);
+            color: var(--footer-text-color);
+        }
     </style>
 </head>
 
@@ -441,7 +436,6 @@
             <div class="logo">
                 <h3>Moje hobby</h3>
             </div>
-
             <div class="links">
                 <ul>
                     <li><a href="index.html">Strona główna</a></li>
@@ -451,7 +445,6 @@
                 </ul>
             </div>
         </nav>
-
         <section class="top">
             <div class="top-content">
                 <h1>Programowanie i cyberbezpieczeństwo</h1>
@@ -460,10 +453,9 @@
         </section>
     </header>
     <main>
-
         <section id="about_hobby">
             <div class="image">
-                <img src="obrazy/2712780_1.jpg.png" alt="">
+                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/2712780_1.jpg.png" alt="">
             </div>
             <div class="about-content">
                 <h2>O hobby</h2>
@@ -472,18 +464,13 @@
                     etycznego hakowania, aby lepiej zrozumieć, jak zabezpieczać systemy i sieci.</p>
             </div>
         </section>
-
-
         <section id="selected_projects">
             <h2 class="main_text">Moje główne projekty</h2>
-
             <div class="projects">
-
                 <div class="project">
-                    <img src="obrazy/Kmi6QiT5tw.png" alt="Obraz przedstawiający stronę zarządzania biblioteką"
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Kmi6QiT5tw.png" alt="Obraz przedstawiający stronę zarządzania biblioteką"
                         title="Widok strony zarządzania biblioteką">
                     <div class="text_content">
-
                         <h2>Witryna zarządzania biblioteką</h2>
                         <p>Projekt polegał na stworzeniu witryny internetowej, która umożliwia zarządzanie księgozbiorem
                             biblioteki a także czytelnikami. Użytkownik może dodawać, usuwać i edytować książki, a także
@@ -492,9 +479,8 @@
                             przez długi czas.</p>
                     </div>
                 </div>
-
                 <div class="project">
-                    <img src="obrazy/b2V9T7AZV9.png"
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/b2V9T7AZV9.png"
                         alt="Obraz przedstawiający stronę powiadamiania o problemach na lotnisku"
                         title="Widok strony powiadamiania o problemach na lotnisku">
                     <div class="text_content">
@@ -505,21 +491,20 @@
                             na danym stanowisku.</p>
                     </div>
                 </div>
-
             </div>
-
-
         </section>
-
         <section id="cybersecurity">
             <h2 class="main_text">Cyberbezpieczeństwo</h2>
             <div class="cybersecurity-content">
-                <img src="obrazy/svg icons/terminal-svgrepo-com.svg.png" alt="Terminal ikona">
+                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg icons/terminal-svgrepo-com.svg.png" alt="Terminal ikona">
                 <p>W dziedzinie cyberbezpieczeństwa uczę się etycznego hakowania, aby lepiej zrozumieć, jak zabezpieczać
                     systemy i sieci. Interesuje mnie także analiza logów, aby wykrywać ataki i próby włamań.</p>
             </div>
         </section>
     </main>
+    <footer>
+        <p>&copy; Maciej Czarnecki - Chąśno 02.02.2025r</p>
+    </footer>
 </body>
 
 </html>
