@@ -253,7 +253,7 @@
         }
 
         main #my_hobbies {
-            padding: 0em 4em;
+            padding: 0em 2em;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -272,7 +272,7 @@
         }
 
         main #my_hobbies .all_hobbies .hobby {
-            flex: 1 1 300px;
+            flex: 1 1 500px;
             text-align: center;
             padding: 20px;
             min-height: 400px;
@@ -360,6 +360,41 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
+        .hobby.programming_and_cybersecurity,
+        .hobby.books_and_film {
+            display: flex;
+            flex-direction: column;
+            /* Ustawia wszystko pionowo */
+            align-items: center;
+            /* Wyśrodkowanie elementów */
+            max-width: 750px !important;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .hobby-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .hobby-content .programming,
+        .hobby-content .cybersecurity,
+        .hobby-content .films,
+        .hobby-content .books {
+            /* border: 1px solid #000; */
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Każda sekcja zajmuje mniej więcej połowę szerokości */
+        }
+
+
+
+
 
         #find_me {
             display: flex;
@@ -602,7 +637,6 @@
                     programowaniem. Na tej stronie chciałbym podzielić się moimi pasjami.</p>
             </div>
         </section>
-
         <section id="my_hobbies">
             <h2 class="main_text">Moje pasje</h2>
 
@@ -616,41 +650,56 @@
                     <a href="lotnictwo.html">Czytaj więcej...</a>
                 </div>
 
-                <div class="hobby programming">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/code-svgrepo-com.svg"
-                        alt="">
-                    <h2>Programowanie</h2>
-                    <p>Programowanie to moja druga pasja. Uwielbiam tworzyć nowe aplikacje i strony internetowe.</p>
-                    <a href="programowanie.html">Czytaj więcej...</a>
+                <div class="hobby programming_and_cybersecurity">
+                    <div class="hobby-content">
+                        <div class="programming">
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/code-svgrepo-com.svg"
+                                alt="">
+                            <h2>Programowanie</h2>
+                            <p>Programowanie to moja druga pasja. Uwielbiam tworzyć nowe aplikacje i strony internetowe.
+                            </p>
+                        </div>
+
+                        <div class="cybersecurity">
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/shield-alt-1-svgrepo-com.svg"
+                                alt="">
+                            <h2>Cyberbezpieczeństwo</h2>
+                            <p>Cyberbezpieczeństwo to coś, czym się interesuję i chcę lepiej zrozumieć, jak to wszystko działa. Najważniejsza jest dla mnie etyczność działań.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-button">
+                        <a href="programowanie-i-cyberbezpieczenstwo.html">Czytaj więcej...</a>
+                    </div>
                 </div>
 
-                <div class="hobby cybersecurity">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/shield-alt-1-svgrepo-com.svg"
-                        alt="">
-                    <h2>Cyberbezpieczeństwo</h2>
-                    <p>W dzisiejszych czasach cyberbezpieczeństwo jest bardzo ważne. Interesuję się tym tematem i chcę
-                        dowiedzieć się jak działa.</p>
-                    <a href="cyberbezpieczenstwo.html">Czytaj więcej...</a>
-                </div>
-                <br>
-                <div class="hobby films">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/film-3-svgrepo-com.svg"
-                        alt="">
-                    <h2>Filmy</h2>
-                    <p>W wolnym czasie lubię oglądać filmy. Moje ulubione gatunki to: science fiction i fantasy.</p>
-                    <a href="filmy.html">Czytaj więcej...</a>
-                </div>
+                <div class="hobby books_and_film">
+                    <div class="hobby-content">
+                        <div class="films">
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/film-3-svgrepo-com.svg"
+                                alt="">
+                            <h2>Filmy</h2>
+                            <p>W wolnym czasie lubię oglądać filmy. <br> Moje ulubione gatunki to: science fiction <br>
+                                i fantasy.</p>
+                        </div>
 
-                <div class="hobby books">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/book-svgrepo-com.svg"
-                        alt="">
-                    <h2>Książki</h2>
-                    <p>Lubię czytać książki. Uwielbiam fantastykę i książki przygodowe.</p>
-                    <a href="ksiazki.html">Czytaj więcej...</a>
+                        <div class="books">
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/book-svgrepo-com.svg"
+                                alt="">
+                            <h2>Książki</h2>
+                            <p>Lubię czytać książki. Uwielbiam <br> fantastykę i książki przygodowe.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-button">
+                        <a href="filmy-i-ksiazki.html">Czytaj więcej...</a>
+                    </div>
                 </div>
 
             </div>
         </section>
+
+
 
         <section id="find_me">
             <h2>Śledź mnie</h2>
