@@ -1,0 +1,181 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik+Dirt:regular);
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Merienda:300,regular,500,600,700,800,900);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --main-color: rgb(61, 216, 22);
+    --white: white;
+    --black: black;
+    --bg-color: #0A0E07;
+    --header-bg-opacity: rgba(0, 0, 0, 0.7);
+    --section-bg-gradient: linear-gradient(to bottom, #0A0E07, #0A0E07, black);
+    --section-shadow: 0px -100px 100px #0A0E07;
+    --plane-border-radius: 15px;
+    --plane-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    --plane-hover-transform: translateY(-5px);
+    --plane-hover-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    --plane-hover-bg-color: #5404c5;
+    --plane-bg-color: rgba(255, 255, 255, 0.562);
+    --plane-backdrop-filter: blur(10px);
+    --plane-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    --atc-bg-gradient: linear-gradient(to bottom, #2e6b9c, #75b4e7);
+    --footer-bg-color: #0050919c;
+    --footer-font-size: 17px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    color: var(--white);
+    background-image: url('https://macions.github.io/szko-a-tsi-projekt/obrazy/bg.jpg');
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--header-bg-opacity);
+    z-index: 1;
+}
+
+header nav {
+    z-index: 3;
+    padding: 1em 2em 0em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+}
+
+header nav li {
+    position: relative;
+    transition-duration: .4s;
+}
+
+header nav li::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    border-radius: 3px;
+    bottom: -2px;
+    transition-duration: .3s;
+    animation: all 0.3s ease-in-out;
+}
+
+header nav li:hover::before {
+    width: 100%;
+}
+
+header nav li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    color: var(--white);
+}
+
+header nav .logo h3 {
+    font-size: 22px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.theme_switch {
+    position: fixed;
+    right: 1em;
+    top: 4em;
+    width: auto;
+}
+
+section.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    position: relative;
+    z-index: 2;
+}
+
+.top .top-content {
+    text-align: center;
+    width: 50%;
+}
+
+.top .top-content .circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    left: 0%;
+    bottom: 20%;
+    border: 1px solid var(--white);
+}
+
+header .top .top-content h1 {
+    font-size: 3.3rem;
+    font-weight: 600;
+}
+
+header .top .top-content h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+main #about {
+    z-index: 100;
+    box-shadow: var(--section-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    padding: 1em;
+    overflow: hidden;
+    background: var(--section-bg-gradient);
+    position: relative;
+    color: var(--white);
+}
+
+main #about .image {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    animation: float 10s ease-in-out infinite;
+}
+
+main #about img {
+    width: 80%;
+    border-radius: 20%;
+}
+
+main #about .image::before {
+    content: "";
+    position: absolute;
+    width: 160%;
+    height: 180%;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    transform: translateX(-27%) translateY(-50%);
+    background-color: rgba(48, 48, 48, 0.171);
+    border-radius: 100%;
+}
