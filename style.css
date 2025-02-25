@@ -20,6 +20,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
 }
 
 body {
@@ -31,7 +32,7 @@ header {
     flex-direction: column;
     height: 100vh;
     /* background-image: url('obrazy/3886526.jpg'); */
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.005), rgba(255, 255, 255, 0.005), rgb(0, 0, 0)), url('obrazy/3886526.jpg');
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)), url('obrazy/3886526.jpg');
     color: var(--header-text-color);
     padding: 0;
     position: relative;
@@ -43,7 +44,7 @@ header::before {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.452);
     backdrop-filter: blur(3px);
 }
 
@@ -163,51 +164,28 @@ header .top .top-content h2 {
 main #about_hobby {
     display: flex;
     align-items: center;
-    height: 80vh;
+    height: 100vh;
     width: 100%;
     padding: var(--section-padding);
     overflow: hidden;
-    background: var(--section-bg-gradient);
+    /* background: var(--section-bg-gradient); */
+    background-color: black;
     position: relative;
+    /* border: 4px solid red; */
 }
 
-main #about_hobby::before,
-main #about_hobby::after {
-    content: "";
-    position: absolute;
-    width: 30%;
-    height: 35%;
-    border-radius: 100%;
-    background: linear-gradient(to bottom, #6306d9, #6e06f7);
-    opacity: 0.1;
-    z-index: -2;
-}
-
-main #about_hobby::before {
-    top: -80px;
-    right: 30%;
-}
-
-main #about_hobby::after {
-    bottom: -80px;
-    left: -100px;
-}
-
-main #about_hobby .image{
-    width: 50%;
+.images {
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: visible;
 }
 
-main #about_hobby .image img {
-    position: relative;
-    bottom: -12rem;
-    width: 80%;
-    opacity: 0.4;
+main #about_hobby .images img {
+    width: 70%;
+    opacity: 0.8;
     border-radius: 20%;
+    overflow: hidden;
 }
 
 main #about_hobby .about-content {
@@ -221,21 +199,51 @@ main #about_hobby .about-content {
     position: relative;
 }
 
-main #about_hobby .about-content::before {
+/* main #about_hobby .about-content::before {
     content: "";
     position: absolute;
-    width: 120%;
+    width: 180%;
     left: -2em;
-    height: 100%;
-    background-color: white;
+    height: 150%;
+    
+    background-color: rgba(255, 255, 255, 0);
+    border: 3px solid white;
     opacity: 0.7;
     border-radius: 100px;
     transform: rotate(174deg);
     z-index: 0;
+    overflow: hidden;
+} */
+
+main #about_hobby .about-content::before {
+    content: "";
+    position: absolute;
+    width: 70%;
+    height: 3px;
+    background-color: rgba(255, 255, 255);
+    border-radius: 100px;
+    z-index: 1;
+    transform: rotate(110deg) translateY(-50%);
+    top: 50%;
+    right: 24em;
+}
+
+main #about_hobby .about-content::after {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 3px;
+    background-color: rgba(255, 255, 255);
+    /* border: 3px solid white; */
+    border-radius: 100px;
+    z-index: 1;
+    transform: rotate(0deg);
+    top: 10%;
+    left: -4em;
 }
 
 main #about_hobby .about-content h2 {
-    color: black;
+    color: white;
     font-size: 2.3rem;
     font-weight: 600;
     z-index: 2;
@@ -243,11 +251,129 @@ main #about_hobby .about-content h2 {
 
 main #about_hobby .about-content a,
 main #about_hobby .about-content p {
-    color: black;
+    color: white;
     z-index: 2;
 }
 
 main #about_hobby .about-content p {
     word-wrap: break-word;
     font-size: 1.1rem;
+}
+
+main #fav_books h2.section-title,
+main #fav_films h2.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    position: relative;
+    width: 100%;
+    color: black;
+}
+
+main #fav_books h2.section-title::before,
+main #fav_books h2.section-title::after,
+main #fav_films h2.section-title::before,
+main #fav_films h2.section-title::after {
+    content: "";
+    position: absolute;
+    width: 27%;
+    height: 2px;
+    background-color: black;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+main #fav_books h2.section-title::before,
+main #fav_films h2.section-title::before {
+    left: 0;
+}
+
+main #fav_books h2.section-title::after,
+main #fav_films h2.section-title::after {
+    right: 0;
+}
+
+#fav_films {
+    /* background: linear-gradient(to bottom, black 0%, #f8f8f8 14%); */
+    background-color: white;
+    padding-top: 3em;
+}
+
+#fav_films,
+#fav_books {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fav_films .films,
+#fav_books .books {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    width: 80%;
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+
+#fav_films .films .film,
+#fav_books .books .book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    margin: 1em;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--project-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#fav_films .films .film .image img,
+#fav_books .books .book .image img {
+    width: 20em;
+    border-radius: 10px;
+}
+
+#fav_books .books .book .content,
+#fav_films .films .film .content {
+    max-width: 54%;
+    /* border: 1px solid #000; */
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    /* border: 1px solid #000; */
+}
+
+#fav_books .books .book .content h2.title,
+#fav_films .films .film .content h2.title {
+    font-size: 4rem;
+    font-weight: 600;
+}
+
+#fav_books .books .book .content a,
+#fav_films .films .film .content a {
+    /* border: 1px solid #000; */
+    font-size: 1.6rem;
+    text-decoration: none;
+    width: 35%;
+    text-align: center;
+    padding: 0.3em 0;
+    color: black;
+    font-weight: 600;
+    border: 2px solid #000;
+    transition-duration: .4s;
+}
+
+#fav_books .books .book .content a:hover,
+#fav_films .films .film .content a:hover {
+    background: black;
+    color: white;
+    border-radius: 15px;
 }
