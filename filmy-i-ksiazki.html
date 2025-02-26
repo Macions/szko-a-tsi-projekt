@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmy i książki</title>
+    <link rel="shortcut icon" href="https://macions.github.io/szko-a-tsi-projekt/obrazy/website-icon.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Rubik+Dirt:regular" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merienda:300,regular,500,600,700,800,900" rel="stylesheet">
 
     <style>
@@ -134,7 +133,7 @@
             font-weight: 600;
         }
 
-        header .top .top-content h2 {
+        header .top .top-content p {
             font-size: 1.4rem;
             font-weight: 300;
         }
@@ -212,8 +211,8 @@
             font-size: 1.1rem;
         }
 
-        main #fav_books h2.section-title,
-        main #fav_films h2.section-title {
+        main #fav_books h3.section-title,
+        main #fav_films h3.section-title {
             text-align: center;
             font-size: 2.8rem;
             font-weight: 800;
@@ -222,10 +221,10 @@
             color: black;
         }
 
-        main #fav_books h2.section-title::before,
-        main #fav_books h2.section-title::after,
-        main #fav_films h2.section-title::before,
-        main #fav_films h2.section-title::after {
+        main #fav_books h3.section-title::before,
+        main #fav_books h3.section-title::after,
+        main #fav_films h3.section-title::before,
+        main #fav_films h3.section-title::after {
             content: "";
             position: absolute;
             width: 27%;
@@ -235,13 +234,13 @@
             transform: translateY(-50%);
         }
 
-        main #fav_books h2.section-title::before,
-        main #fav_films h2.section-title::before {
+        main #fav_books h3.section-title::before,
+        main #fav_films h3.section-title::before {
             left: 0;
         }
 
-        main #fav_books h2.section-title::after,
-        main #fav_films h2.section-title::after {
+        main #fav_books h3.section-title::after,
+        main #fav_films h3.section-title::after {
             right: 0;
         }
 
@@ -299,8 +298,8 @@
             gap: 1em;
         }
 
-        #fav_books .books .book .content h2.title,
-        #fav_films .films .film .content h2.title {
+        #fav_books .books .book .content h4.title,
+        #fav_films .films .film .content h4.title {
             font-size: 4rem;
             font-weight: 600;
         }
@@ -334,6 +333,7 @@
         }
     </style>
 </head>
+
 <body>
     <header>
         <nav>
@@ -352,7 +352,7 @@
         <section class="top">
             <div class="top-content">
                 <h1>Filmy i książki</h1>
-                <h2>Kocham oglądać filmy i czytać książki <br> science fiction.</h2>
+                <p>Kocham oglądać filmy i czytać książki <br> science fiction.</p>
             </div>
         </section>
     </header>
@@ -370,34 +370,35 @@
         </section>
 
         <section id="fav_films">
-            <h2 class="section-title">Moje ulubione filmy</h2>
+            <h3 class="section-title">Moje ulubione filmy</h3>
             <div class="films">
                 <div class="film">
                     <div class="image">
                         <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Harry-Potter_film.jpg"
-                            alt="Film Harry Potter">
+                            alt="Plakat filmu 'Harry Potter'" title="Film Harry Potter">
                     </div>
                     <div class="content">
-                        <h2 class="title">Seria <br><q>Harry Potter</q></h2>
+                        <h4 class="title">Seria <br><q>Harry Potter</q></h4>
                         <a href="https://www.filmweb.pl/world/Harry+Potter-7">Filmweb</a>
                     </div>
                 </div>
                 <div class="film">
                     <div class="image">
                         <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Designated-Survivor_film.jpg"
-                            alt="Serial Designated Survivor">
+                            alt="Plakat serialu 'Designated Survivor'" title="Serial Designated Survivor">
                     </div>
                     <div class="content">
-                        <h2 class="title">Serial <q>Designated Survivor</q></h2>
+                        <h4 class="title">Serial <q>Designated Survivor</q></h4>
                         <a href="https://www.filmweb.pl/serial/Designated+Survivor-2016-766285">Filmweb</a>
                     </div>
                 </div>
                 <div class="film">
                     <div class="image">
-                        <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Kingsman_film.png" alt="Film Kingsman">
+                        <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Kingsman_film.png"
+                            alt="Plakat filmu 'Kingsman'" title="Film Kingsman">
                     </div>
                     <div class="content">
-                        <h2 class="title"><q>Kingsman</q></h2>
+                        <h4 class="title"><q>Kingsman</q></h2>
                         <a href="https://www.filmweb.pl/film/Kingsman%3A+Tajne+s%C5%82u%C5%BCby-2014-682272">Filmweb</a>
                     </div>
                 </div>
@@ -405,33 +406,33 @@
         </section>
 
         <section id="fav_books">
-            <h2 class="section-title">Moje ulubione książki</h2>
+            <h3 class="section-title">Moje ulubione książki</h3>
             <div class="books">
                 <div class="book">
                     <div class="image">
                         <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Harry-Potter_book.jpeg"
-                            alt="Książka Harry Potter">
+                            alt="Okładka książki 'Harry Potter'" title="Książka Harry Potter">
                     </div>
                     <div class="content">
-                        <h2 class="title">Seria<br><q>Harry Potter</q></h2>
+                        <h4 class="title">Seria<br><q>Harry Potter</q></h2>
                     </div>
                 </div>
                 <div class="book">
                     <div class="image">
                         <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Felix-Net-i-Nika_book.jpeg"
-                            alt="Książka Felix, Net i Nika">
+                            alt="Okładka książki 'Felix, Net i Nika'" title="Książka Felix, Net i Nika">
                     </div>
                     <div class="content">
-                        <h2 class="title">Seria<br><q>Felix, Net i Nika</q></h2>
+                        <h4 class="title">Seria<br><q>Felix, Net i Nika</q></h2>
                     </div>
                 </div>
                 <div class="book">
-                    <div class="image"></div>
+                    <div class="image">
                         <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Gdzie-jest-skrytka-generala-Grota_book.jpeg"
-                            alt="Książka Gdzie jest skrytka generała Grota?">
+                            alt="Okładka książki 'Gdzie jest skrytka generała Grota?'" title="Książka Gdzie jest skrytka generała Grota?">
                     </div>
                     <div class="content">
-                        <h2 class="title"><q>Gdzie jest skrytka generała Grota?</q></h2>
+                        <h4 class="title"><q>Gdzie jest skrytka generała Grota?</q></h2>
                     </div>
                 </div>
             </div>
