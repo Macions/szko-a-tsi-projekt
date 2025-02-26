@@ -377,3 +377,11 @@ main #fav_films h2.section-title::after {
     color: white;
     border-radius: 15px;
 }
+
+footer {
+    padding: 10px;
+    text-align: center;
+    font-size: 17px;
+    background-color: #000000;
+    color: white;
+}
