@@ -5,19 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lotnictwo</title>
+    <link rel="shortcut icon" href="https://macions.github.io/szko-a-tsi-projekt/obrazy/website-icon.png" type="image/x-icon">
 
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Rubik+Dirt:regular);
         @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-        @import url(https://fonts.googleapis.com/css?family=Merienda:300,regular,500,600,700,800,900);
-
+    
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
+    
         :root {
             --main-color: rgb(61, 216, 22);
             --white: white;
@@ -25,31 +24,29 @@
             --bg-color: #0A0E07;
             --header-bg-opacity: rgba(0, 0, 0, 0.7);
             --section-bg-gradient: linear-gradient(to bottom, #0A0E07, #0A0E07, black);
-            --section-shadow: 0px -100px 100px #0A0E07;
             --plane-border-radius: 15px;
             --plane-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
             --plane-hover-transform: translateY(-5px);
             --plane-hover-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
             --plane-hover-bg-color: #5404c5;
-            --plane-bg-color: rgba(255, 255, 255, 0.562);
             --plane-backdrop-filter: blur(10px);
             --plane-transition: transform 0.3s ease, box-shadow 0.3s ease;
             --atc-bg-gradient: linear-gradient(to bottom, #2e6b9c, #75b4e7);
             --footer-bg-color: #0050919c;
             --footer-font-size: 17px;
         }
-
+    
         header {
             display: flex;
             flex-direction: column;
             height: 100vh;
             color: var(--white);
-            background-image: url('https://macions.github.io/szko-a-tsi-projekt/obrazy/bg.jpg');
+            background-image: url('https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/background.jpg');
             padding: 0;
             position: relative;
             overflow: hidden;
         }
-
+    
         header::before {
             content: "";
             position: absolute;
@@ -58,7 +55,7 @@
             background-color: var(--header-bg-opacity);
             z-index: 1;
         }
-
+    
         header nav {
             z-index: 3;
             padding: 1em 2em 0em 2em;
@@ -66,19 +63,19 @@
             justify-content: space-between;
             align-items: center;
         }
-
+    
         header nav ul {
             display: flex;
             list-style: none;
             gap: 4rem;
         }
-
-        header nav li {
+    
+        header nav ul li {
             position: relative;
             transition-duration: .4s;
         }
-
-        header nav li::before {
+    
+        header nav ul li::before {
             content: "";
             position: absolute;
             width: 0;
@@ -89,31 +86,24 @@
             transition-duration: .3s;
             animation: all 0.3s ease-in-out;
         }
-
-        header nav li:hover::before {
+    
+        header nav ul li:hover::before {
             width: 100%;
         }
-
-        header nav li a {
+    
+        header nav ul li a {
             text-decoration: none;
             font-size: 1.2rem;
             position: relative;
             color: var(--white);
         }
-
-        header nav .logo h3 {
+    
+        header nav .logo h1 {
             font-size: 22px;
             font-weight: 300;
             font-style: italic;
         }
-
-        .theme_switch {
-            position: fixed;
-            right: 1em;
-            top: 4em;
-            width: auto;
-        }
-
+    
         section.top {
             display: flex;
             justify-content: center;
@@ -122,13 +112,13 @@
             position: relative;
             z-index: 2;
         }
-
-        .top .top-content {
+    
+        section.top .top-content {
             text-align: center;
             width: 50%;
         }
-
-        .top .top-content .circle {
+    
+        section.top .top-content .circle {
             position: absolute;
             width: 200px;
             height: 200px;
@@ -137,20 +127,20 @@
             bottom: 20%;
             border: 1px solid var(--white);
         }
-
-        header .top .top-content h1 {
+    
+        section.top .top-content h2 {
             font-size: 3.3rem;
             font-weight: 600;
         }
-
-        header .top .top-content h2 {
+    
+        section.top .top-content p {
             font-size: 1.5rem;
             font-weight: 300;
         }
-
+    
         main #about {
             z-index: 100;
-            box-shadow: var(--section-shadow);
+            box-shadow: 0px -100px 100px #0A0E07;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -162,7 +152,7 @@
             position: relative;
             color: var(--white);
         }
-
+    
         main #about .image {
             display: flex;
             justify-content: end;
@@ -170,12 +160,12 @@
             position: relative;
             animation: float 10s ease-in-out infinite;
         }
-
-        main #about img {
+    
+        main #about .image img {
             width: 80%;
             border-radius: 20%;
         }
-
+    
         main #about .image::before {
             content: "";
             position: absolute;
@@ -188,19 +178,16 @@
             background-color: rgba(48, 48, 48, 0.171);
             border-radius: 100%;
         }
-
+    
         @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(10px);
+            0%, 100% {
+            transform: translateY(10px);
             }
-
             50% {
-                transform: translateY(-10px);
+            transform: translateY(-10px);
             }
         }
-
+    
         main #about .about-content {
             width: 100%;
             height: auto;
@@ -212,24 +199,24 @@
             text-align: center;
             position: relative;
         }
-
+    
         main #about .about-content h2,
         main #about .about-content a,
         main #about .about-content p {
             color: var(--white);
             z-index: 2;
         }
-
+    
         main #about .about-content h2 {
             font-size: 2.5rem;
             font-weight: 600;
         }
-
+    
         main #about .about-content p {
             word-wrap: break-word;
             font-size: 1.1rem;
         }
-
+    
         main #fav_planes {
             display: flex;
             flex-direction: column;
@@ -237,7 +224,7 @@
             background: linear-gradient(to bottom, var(--black), var(--black), #2e6b9c);
             z-index: 101;
         }
-
+    
         main #fav_planes .planes {
             display: flex;
             justify-content: center;
@@ -247,7 +234,7 @@
             width: 100%;
             padding: 0 20px;
         }
-
+    
         main #fav_planes .planes .plane {
             flex: 1 1 400px;
             text-align: center;
@@ -264,36 +251,36 @@
             box-shadow: var(--plane-box-shadow);
             transition: var(--plane-transition);
         }
-
+    
         main #fav_planes .planes .plane:hover {
             transform: var(--plane-hover-transform);
             box-shadow: var(--plane-hover-box-shadow);
         }
-
+    
         main #fav_planes .planes .plane img {
             width: 20rem;
             height: auto;
             margin-bottom: 15px;
         }
-
-        main #fav_planes .planes .plane h2,
+    
+        main #fav_planes .planes .plane h3,
         main #fav_planes .planes .plane p,
         main #fav_planes .planes .plane a {
             color: var(--white);
         }
-
-        main #fav_planes .planes .plane h2 {
+    
+        main #fav_planes .planes .plane h3 {
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 10px;
         }
-
+    
         main #fav_planes .planes .plane p {
             font-size: 1rem;
             opacity: 0.85;
             margin-bottom: 15px;
         }
-
+    
         main #fav_planes .planes .plane a {
             text-decoration: none;
             background-color: #38037e96;
@@ -302,11 +289,11 @@
             font-weight: 600;
             transition: background-color 0.3s;
         }
-
+    
         main #fav_planes .planes .plane a:hover {
             background-color: var(--plane-hover-bg-color);
         }
-
+    
         main #fav_planes h2.main_text {
             text-align: center;
             font-size: 2.8rem;
@@ -317,7 +304,7 @@
             width: 100%;
             color: white;
         }
-
+    
         main #fav_planes h2.main_text::before,
         main #fav_planes h2.main_text::after {
             content: "";
@@ -328,28 +315,28 @@
             top: 50%;
             transform: translateY(-50%);
         }
-
+    
         main #fav_planes h2.main_text::before {
             left: 0;
         }
-
+    
         main #fav_planes h2.main_text::after {
             right: 0;
         }
-
+    
         main #fav_planes .planes .plane:nth-child(1) {
             position: relative;
         }
-
+    
         main #fav_planes .planes .plane:nth-child(1) img.crown {
             content: "";
             position: absolute;
             width: 23%;
-            top: -48px;
+            top: -40px;
             left: 50%;
             transform: translateX(-50%);
         }
-
+    
         main #atc {
             position: relative;
             height: 100vh;
@@ -364,43 +351,42 @@
             overflow: hidden;
             background: var(--atc-bg-gradient);
         }
-
+    
         main #atc img.cloud {
             position: absolute;
             z-index: 0;
             opacity: 0.1;
             animation: moveClouds linear infinite;
         }
-
+    
         @keyframes moveClouds {
             0% {
-                transform: translateX(0%);
+            transform: translateX(0%);
             }
-
             100% {
-                transform: translateX(140vw);
+            transform: translateX(140vw);
             }
         }
-
+    
         main #atc img.cloud:nth-child(1) {
             top: 5%;
             left: -50%;
             width: 20%;
             animation-duration: 60s;
         }
-
+    
         main #atc img.cloud:nth-child(2) {
             top: 15%;
             left: -30%;
             width: 30%;
             animation-duration: 45s;
         }
-
+    
         main #atc h2,
         main #atc p {
             z-index: 3;
         }
-
+    
         main #atc h2 {
             font-size: 4rem;
             font-weight: bold;
@@ -413,7 +399,7 @@
             background-color: transparent;
             backdrop-filter: blur(10px);
         }
-
+    
         main #atc p {
             font-size: 1.6rem;
             line-height: 1.8;
@@ -422,7 +408,7 @@
             color: rgba(255, 255, 255, 0.85);
             margin-bottom: 20px;
         }
-
+    
         main #atc img.atc_tower {
             position: absolute;
             bottom: 0;
@@ -431,7 +417,7 @@
             z-index: 2;
             opacity: 0.2;
         }
-
+    
         footer {
             padding: 10px;
             text-align: center;
@@ -441,13 +427,12 @@
         }
     </style>
 </head>
-
 <body>
 
     <header>
-        <nav>
+        <nav aria-label="Główna nawigacja">
             <div class="logo">
-                <h3>Moje hobby</h3>
+                <h1>Moje hobby</h1>
             </div>
 
             <div class="links">
@@ -462,72 +447,71 @@
 
         <section class="top">
             <div class="top-content">
-                <h1>Lotnictwo</h1>
-                <h2>Kocham samoloty. Fascynuje mnie ich konstrukcja, historia oraz technologia.</h2>
+                <h2>Lotnictwo</h2>
+                <p>Kocham samoloty. Fascynuje mnie ich konstrukcja, historia oraz technologia.</p>
             </div>
         </section>
     </header>
 
     <main>
-        <section id="about">
+        <section id="about" aria-labelledby="about-heading">
             <div class="about-content">
-                <h2>O hobby</h2>
+                <h2 id="about-heading">O hobby</h2>
                 <p>Lotnictwo to moja pasja – od ATC po mechanikę silników i wojskowe maszyny. W wolnych chwilach
                     poszerzam swoją wiedzę w tej tematyce.</p>
             </div>
             <div class="image">
-                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Hercules.png" alt="Hercules C-130 samolot transportowy" title="Hercules C-130 samolot transportowy">
+                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/plane-Hercules.png" alt="Hercules C-130 samolot transportowy" title="Hercules C-130 samolot transportowy">
             </div>
         </section>
 
-
-        <section id="fav_planes">
-            <h2 class="main_text">Moje ulubione samoloty</h2>
+        <section id="fav_planes" aria-labelledby="fav-planes-heading">
+            <h2 id="fav-planes-heading" class="main_text">Moje ulubione samoloty</h2>
 
             <div class="planes">
 
                 <div class="plane">
                     <img class="crown"
-                        src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg icons/royal-crown.svg.png" alt="Korona" title="Korona">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Hercules.png" alt="Hercules C-130 samolot transportowy" title="Hercules C-130 samolot transportowy">
-                    <h2>Hercules C-130</h2>
+                        src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/royal-crown.png" alt="Korona">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/plane-Hercules.png" alt="Hercules C-130 samolot transportowy" title="Hercules C-130 samolot transportowy">
+                    <h3>Hercules C-130</h3>
                 </div>
 
                 <div class="plane">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/casa_C295.png" alt="CASA C-295 samolot transportowy" title="CASA C-295 samolot transportowy">
-                    <h2>CASA C-295</h2>
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/plane-CASA_C295.png" alt="CASA C-295 samolot transportowy" title="CASA C-295 samolot transportowy">
+                    <h3>CASA C-295</h3>
                 </div>
                 <div class="plane">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/f_35.png" alt="F-35 Lightning II myśliwiec" title="F-35 Lightning II myśliwiec">
-                    <h2>F-35 Lightning II</h2>
-                </div>
-
-                <div class="plane">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/f_16.png" alt="F-16 Fighting Falcon myśliwiec" title="F-16 Fighting Falcon myśliwiec">
-                    <h2>F-16 Fighting Falcon</h2>
-                </div>
-                <div class="plane">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/b787.png" alt="Boeing 787 Dreamliner samolot pasażerski" title="Boeing 787 Dreamliner samolot pasażerski">
-                    <h2>Boeing 787 Dreamliner</h2>
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/fighter-f_35.png" alt="F-35 Lightning II myśliwiec" title="F-35 Lightning II myśliwiec">
+                    <h3>F-35 Lightning II</h3>
                 </div>
 
                 <div class="plane">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/b737.png" alt="Boeing 737-800 samolot pasażerski" title="Boeing 737-800 samolot pasażerski">
-                    <h2>Boeing 737-800</h2>
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/fighter-f_16.png" alt="F-16 Fighting Falcon myśliwiec" title="F-16 Fighting Falcon myśliwiec">
+                    <h3>F-16 Fighting Falcon</h3>
+                </div>
+                <div class="plane">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/plane-b787.png" alt="Boeing 787 Dreamliner samolot pasażerski" title="Boeing 787 Dreamliner samolot pasażerski">
+                    <h3>Boeing 787 Dreamliner</h3>
+                </div>
+
+                <div class="plane">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/plane-b737.png" alt="Boeing 737-800 samolot pasażerski" title="Boeing 737-800 samolot pasażerski">
+                    <h3>Boeing 737-800</h3>
                 </div>
             </div>
         </section>
 
-        <section id="atc">
-            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Warstwa 0.png" class="cloud">
-            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Warstwa 0.png" class="cloud">
-            <h2 class="main_text">ATC</h2>
+        <section id="atc" aria-labelledby="atc-heading">
+            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/cloud.png" class="cloud">
+            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/cloud.png" class="cloud">
+            <h2 id="atc-heading" class="main_text">ATC</h2>
             <p>ATC (Air Traffic Control) to system zarządzający ruchem samolotów, zapewniający bezpieczeństwo w
                 przestrzeni powietrznej. Kontrolerzy kierują lotami, minimalizując ryzyko kolizji. Dla mnie to
                 fascynujący temat, łączący technologię i precyzyjne planowanie. Uwielbiam słuchać transmisji ATC, bo
                 pokazuje, jak zorganizowany musi być ruch lotniczy.</p>
 
-            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/atc tower.png" alt="Wieża kontroli lotów" class="atc_tower" title="Wieża kontroli lotów">
+            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/obrazy-lotnictwo/atc-tower.png" alt="Wieża kontroli lotów" class="atc_tower" title="Wieża kontroli lotów">
         </section>
 
     </main>
@@ -536,5 +520,4 @@
         <p>&copy; Maciej Czarnecki - Chąśno 02.02.2025r</p>
     </footer>
 </body>
-
 </html>
