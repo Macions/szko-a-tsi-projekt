@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Rubik+Dirt:regular);
         @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-        @import url(https://fonts.googleapis.com/css?family=Merienda:300,regular,500,600,700,800,900);
+
+        :root {
+            --main-color: rgb(61, 216, 22);
+            --header-bg-gradient: linear-gradient(to bottom, #6306d9, #6e06f7);
+            --header-text-color: white;
+            --about-bg-gradient: linear-gradient(to bottom, rgba(110, 6, 247, 0.025), rgba(110, 6, 247, 0.129));
+            --hobbies-bg-gradient: linear-gradient(to bottom, rgba(110, 6, 247, 0.05), rgba(110, 6, 247, 0.15));
+            --contact-bg-gradient: linear-gradient(to bottom, rgba(110, 6, 247, 0.05), rgba(110, 6, 247, 0.15));
+            --footer-bg-color: #29025ed2;
+            --footer-text-color: white;
+        }
 
         * {
             margin: 0;
@@ -18,43 +26,41 @@
             font-family: 'Poppins', sans-serif;
         }
 
-        :root {
-            --main-color: rgb(61, 216, 22);
-        }
-
         header {
             display: flex;
             flex-direction: column;
             height: 100vh;
-            background: linear-gradient(to bottom, #6306d9, #6e06f7);
-            color: white;
+            background: var(--header-bg-gradient);
+            color: var(--header-text-color);
             padding: 0;
             position: relative;
             overflow: hidden;
+            z-index: 1;
         }
 
-        header::before {
-            content: "";
-            position: absolute;
-            width: 150%;
-            height: 100%;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
-            top: -50%;
-            left: -25%;
-            transform: rotate(20deg);
-            animation: rotating 30s linear infinite;
-        }
-
+        header::before,
         header::after {
             content: "";
             position: absolute;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            animation: rotating 30s linear infinite;
+            z-index: -1;
+        }
+
+        header::before {
+            width: 150%;
+            height: 100%;
+            top: -50%;
+            left: -25%;
+            transform: rotate(20deg);
+        }
+
+        header::after {
             width: 120%;
             height: 60%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 80%);
             bottom: -10%;
             left: -10%;
             transform: rotate(-10deg);
-            animation: rotating2 30s linear infinite;
         }
 
         header nav {
@@ -80,11 +86,10 @@
             position: absolute;
             width: 0;
             height: 2px;
-            background-color: white;
+            background-color: var(--header-text-color);
             border-radius: 3px;
             bottom: -2px;
             transition-duration: .3s;
-            animation: all 0.3s ease-in-out;
         }
 
         header nav li:hover::before {
@@ -94,40 +99,13 @@
         header nav li a {
             text-decoration: none;
             font-size: 1.2rem;
-            position: relative;
-            color: white;
+            color: var(--header-text-color);
         }
 
-        header nav .logo h3 {
+        header nav .logo h1 {
             font-size: 22px;
             font-weight: 300;
             font-style: italic;
-        }
-
-        .theme_switch {
-            position: fixed;
-            right: 1em;
-            top: 4em;
-            width: auto;
-        }
-
-        .theme_switch #select_theme {
-            border: 1px solid #000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 30px;
-            padding: 6px 10px;
-            border-radius: 10px;
-        }
-
-        .theme_switch #select_theme img {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            fill: red !important;
-            stroke: red;
-            stroke-width: 2px;
         }
 
         section.top {
@@ -143,22 +121,12 @@
             text-align: center;
         }
 
-        .top .top-content .circle {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            left: 0%;
-            bottom: 20%;
-            border: 1px solid #fff;
-        }
-
-        header .top .top-content h1 {
+        .top .top-content h2 {
             font-size: 3rem;
             font-weight: 600;
         }
 
-        header .top .top-content h2 {
+        .top .top-content h3 {
             font-size: 1.4rem;
             font-weight: 300;
         }
@@ -171,7 +139,7 @@
             width: 100%;
             padding: 1em;
             overflow: hidden;
-            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.025), rgba(110, 6, 247, 0.129));
+            background: var(--about-bg-gradient);
             position: relative;
         }
 
@@ -182,7 +150,7 @@
             width: 30%;
             height: 35%;
             border-radius: 100%;
-            background: linear-gradient(to bottom, #6306d9, #6e06f7);
+            background: var(--header-bg-gradient);
             opacity: 0.1;
             z-index: -2;
         }
@@ -210,7 +178,6 @@
 
         main #about .about-content {
             width: 50%;
-            height: auto;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -253,12 +220,11 @@
         }
 
         main #my_hobbies {
-            padding: 0em 2em;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 2rem;
-            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.05), rgba(110, 6, 247, 0.15));
+            background: var(--hobbies-bg-gradient);
         }
 
         main #my_hobbies .all_hobbies {
@@ -299,7 +265,7 @@
             margin-bottom: 15px;
         }
 
-        main #my_hobbies .all_hobbies .hobby h2 {
+        main #my_hobbies .all_hobbies .hobby h3 {
             font-size: 1.6rem;
             color: black;
             font-weight: 700;
@@ -338,36 +304,30 @@
             width: 100%;
         }
 
-        main #my_hobbies h2.main_text::before {
+        main #my_hobbies h2.main_text::before,
+        main #my_hobbies h2.main_text::after {
             content: "";
             position: absolute;
             width: 37%;
-            left: auto;
-            left: 0;
             height: 2px;
             background-color: #420097;
             top: 50%;
             transform: translateY(-50%);
         }
 
+        main #my_hobbies h2.main_text::before {
+            left: 0;
+        }
+
         main #my_hobbies h2.main_text::after {
-            content: "";
-            position: absolute;
-            width: 37%;
             right: 0;
-            height: 2px;
-            background-color: #420097;
-            top: 50%;
-            transform: translateY(-50%);
         }
 
         .hobby.programming_and_cybersecurity,
         .hobby.books_and_film {
             display: flex;
             flex-direction: column;
-            /* Ustawia wszystko pionowo */
             align-items: center;
-            /* Wyśrodkowanie elementów */
             max-width: 750px !important;
             text-align: center;
             gap: 30px;
@@ -383,18 +343,12 @@
         .hobby-content .cybersecurity,
         .hobby-content .films,
         .hobby-content .books {
-            /* border: 1px solid #000; */
             width: 48%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            /* Każda sekcja zajmuje mniej więcej połowę szerokości */
         }
-
-
-
-
 
         #find_me {
             display: flex;
@@ -402,7 +356,7 @@
             justify-content: center;
             align-items: center;
             height: 70vh;
-            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.025), rgba(110, 6, 247, 0.129));
+            background: var(--about-bg-gradient);
             position: relative;
             overflow: hidden;
         }
@@ -448,7 +402,7 @@
             align-items: center;
             justify-content: center;
             padding: 2em;
-            background: linear-gradient(to bottom, rgba(110, 6, 247, 0.05), rgba(110, 6, 247, 0.15));
+            background: var(--contact-bg-gradient);
             height: auto;
         }
 
@@ -517,7 +471,6 @@
         #contact textarea:focus {
             border-color: #4100976e;
             box-shadow: 0px 0px 10px #420097;
-
         }
 
         #contact button {
@@ -536,19 +489,12 @@
             background-color: #420097;
         }
 
-        #contact .form-item {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5em;
-        }
-
-
         footer {
             padding: 10px;
             text-align: center;
             font-size: 17px;
-            background-color: #333;
-            color: white;
+            background-color: var(--footer-bg-color);
+            color: var(--footer-text-color);
         }
 
         @keyframes rotating {
@@ -560,54 +506,19 @@
                 transform: rotate(380deg);
             }
         }
-
-        @keyframes rotating2 {
-            0% {
-                transform: rotate(-10deg);
-            }
-
-            100% {
-                transform: rotate(-190deg);
-            }
-        }
-
-        @keyframes changewidth {
-            0% {
-                width: 0%;
-            }
-
-            50% {
-                width: 37%;
-            }
-
-            100% {
-                width: 0%;
-            }
-        }
-
-        @keyframes changewidt {
-            0% {
-                width: 0%;
-            }
-
-            100% {
-                width: 37%;
-            }
-        }
     </style>
 </head>
 
 <body>
     <header>
-        <nav>
+        <nav aria-label="Główna nawigacja">
             <div class="logo">
-                <!-- <h2>MH</h2> -->
-                <h3>Moje hobby</h3>
+                <h1>Moje hobby</h1>
             </div>
 
             <div class="links">
                 <ul>
-                    <li><a href="index.html" class="curent">Strona główna</a></li>
+                    <li><a href="index.html" class="current" aria-current="page">Strona główna</a></li>
                     <li><a href="#about">O mnie</a></li>
                     <li><a href="#my_hobbies">Moje pasje</a></li>
                     <li><a href="#find_me">Śledź mnie</a></li>
@@ -616,55 +527,56 @@
             </div>
         </nav>
 
-        <section class="top">
+        <section class="top" aria-labelledby="welcome-heading">
             <div class="top-content">
-                <h1>Witaj na mojej stronie</h1>
-                <h2>Znajdziesz tu informacje o moich hobby.</h2>
+                <h2 id="welcome-heading">Witaj na mojej stronie</h2>
+                <h3>Znajdziesz tu informacje o moich hobby.</h3>
             </div>
         </section>
     </header>
     <main>
 
-        <section id="about">
+        <section id="about" aria-labelledby="about-heading">
             <div class="image">
-                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Warstwa 1.png" alt="">
+                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/me.png" alt="Moja twarz">
             </div>
             <div class="about-content">
-                <h2>O mnie</h2>
+                <h2 id="about-heading">O mnie</h2>
                 <p>Nazywam się Maciej Czarnecki i jestem uczniem <a href="http://zsp2lowicz.pl/">Zespołu Szkół
                         Ponadpodstawowych nr 2 im. Tadeusza Kościuszki w Łowiczu</a>. Kształcę się na profilu technik
-                    informatyk. Głównię interesuję się lotnictwem i
+                    informatyk. Głównie interesuję się lotnictwem i
                     programowaniem. Na tej stronie chciałbym podzielić się moimi pasjami.</p>
             </div>
         </section>
-        <section id="my_hobbies">
-            <h2 class="main_text">Moje pasje</h2>
+        <section id="my_hobbies" aria-labelledby="hobbies-heading">
+            <h2 id="hobbies-heading" class="main_text">Moje pasje</h2>
 
             <div class="all_hobbies">
 
-                <div class="hobby aviation">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/plane-svgrepo-com.svg"
-                        alt="">
-                    <h2>Lotnictwo</h2>
+                <div class="hobby aviation" aria-labelledby="aviation-heading">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg_icons/plane.svg"
+                        alt="Ikona samolotu">
+                    <h3 id="aviation-heading">Lotnictwo</h3>
                     <p>Kocham samoloty. Fascynuje mnie ich konstrukcja, historia oraz technologia.</p>
                     <a href="lotnictwo.html">Czytaj więcej...</a>
                 </div>
 
-                <div class="hobby programming_and_cybersecurity">
+                <div class="hobby programming_and_cybersecurity" aria-labelledby="programming-heading cybersecurity-heading">
                     <div class="hobby-content">
                         <div class="programming">
-                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/code-svgrepo-com.svg"
-                                alt="">
-                            <h2>Programowanie</h2>
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg_icons/code.svg"
+                                alt="Ikona kodu">
+                            <h3 id="programming-heading">Programowanie</h3>
                             <p>Programowanie to moja druga pasja. Uwielbiam tworzyć nowe aplikacje i strony internetowe.
                             </p>
                         </div>
 
                         <div class="cybersecurity">
-                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/shield-alt-1-svgrepo-com.svg"
-                                alt="">
-                            <h2>Cyberbezpieczeństwo</h2>
-                            <p>Cyberbezpieczeństwo to coś, czym się interesuję i chcę lepiej zrozumieć, jak to wszystko działa. Najważniejsza jest dla mnie etyczność działań.</p>
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg_icons/shield.svg"
+                                alt="Ikona tarczy">
+                            <h3 id="cybersecurity-heading">Cyberbezpieczeństwo</h3>
+                            <p>Cyberbezpieczeństwo to coś, czym się interesuję i chcę lepiej zrozumieć, jak to wszystko
+                                działa. Najważniejsza jest dla mnie etyczność działań.</p>
                         </div>
                     </div>
 
@@ -673,20 +585,20 @@
                     </div>
                 </div>
 
-                <div class="hobby books_and_film">
+                <div class="hobby books_and_film" aria-labelledby="films-heading books-heading">
                     <div class="hobby-content">
                         <div class="films">
-                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/film-3-svgrepo-com.svg"
-                                alt="">
-                            <h2>Filmy</h2>
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg_icons/film.svg"
+                                alt="Ikona filmu">
+                            <h3 id="films-heading">Filmy</h3>
                             <p>W wolnym czasie lubię oglądać filmy. <br> Moje ulubione gatunki to: science fiction <br>
                                 i fantasy.</p>
                         </div>
 
                         <div class="books">
-                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/book-svgrepo-com.svg"
-                                alt="">
-                            <h2>Książki</h2>
+                            <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg_icons/book.svg"
+                                alt="Ikona książki">
+                            <h3 id="books-heading">Książki</h3>
                             <p>Lubię czytać książki. Uwielbiam <br> fantastykę i książki przygodowe.</p>
                         </div>
                     </div>
@@ -699,38 +611,37 @@
             </div>
         </section>
 
-
-
-        <section id="find_me">
-            <h2>Śledź mnie</h2>
+        <section id="find_me" aria-labelledby="find-me-heading">
+            <h2 id="find-me-heading">Śledź mnie</h2>
             <div class="social-media">
                 <a href="https://github.com/Macions/">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg%20icons/github-svgrepo-com.svg"
-                        alt="">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/svg_icons/github.svg"
+                        alt="Logo GitHub" title="GitHub">
                 </a>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Kontakt</h2>
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Kontakt</h2>
             <form action="mailto:maciejczarneckitin@gmail.com" method="post" enctype="text/plain">
-                <input type="text" id="name" name="name" required>
                 <label class="name" for="name">Imię:</label>
+                <input type="text" id="name" name="name" required>
 
-                <input type="email" id="email" name="email" required>
                 <label class="email" for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-                <textarea id="message" name="message" required></textarea>
                 <label class="message" for="message">Wiadomość:</label>
+                <textarea id="message" name="message" required></textarea>
 
                 <button type="submit">Wyślij</button>
             </form>
         </section>
 
         <footer>
-            <p>&copy; Maciej Czarnecki - Chąśno 02.02.2025r</p>
+            <p>&copy; Maciej Czarnecki - Chąśno 02.02.2025 r.</p>
         </footer>
     </main>
+</body>
 </body>
 
 </html>
