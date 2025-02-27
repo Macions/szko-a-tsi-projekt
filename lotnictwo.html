@@ -432,8 +432,15 @@
             color: var(--white);
         }
 
-        /* 🔹 Ekrany większe niż 1200px (np. szerokie monitory) */
         @media screen and (min-width: 1200px) {
+            header nav ul {
+                gap: 4rem;
+            }
+
+            section.top .top-content h2 {
+                font-size: 3.5rem;
+            }
+
             main #about .about-content {
                 width: 45%;
                 padding: 4em 2em;
@@ -443,15 +450,15 @@
                 width: 50%;
             }
 
-            .top .top-content h2 {
-                font-size: 3.5rem;
-            }
         }
 
-        /* 🔹 Tablety i laptopy (768px – 1199px) */
         @media screen and (max-width: 1199px) {
             header nav ul {
                 gap: 2rem;
+            }
+
+            section.top .top-content h2 {
+                font-size: 3rem;
             }
 
             main #about {
@@ -469,22 +476,15 @@
                 width: 50%;
             }
 
-            main #my_hobbies .all_hobbies {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            main #my_hobbies .all_hobbies .hobby {
-                max-width: 100%;
-                width: auto;
-            }
-
-            .top .top-content h2 {
-                font-size: 3rem;
+            main #about .image::before {
+                left: 50%;
+                top: 50%;
+                width: 110%;
+                height: 130%;
+                transform: translateX(-50%) translateY(-50%);
             }
         }
 
-        /* 🔹 Telefony poziomo (480px – 767px) */
         @media screen and (max-width: 767px) {
             header {
                 height: 80vh;
@@ -499,50 +499,8 @@
                 gap: 2.7rem;
             }
 
-            .top .top-content h2 {
+            section.top .top-content h2 {
                 font-size: 2.5rem;
-            }
-
-            main #my_hobbies h2.main_text::before,
-            main #my_hobbies h2.main_text::after {
-                width: 24vw;
-            }
-
-            .hobby-content {
-
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                width: 100%;
-                height: 100%;
-                align-items: center;
-
-            }
-
-            main #my_hobbies .all_hobbies .hobby {
-                flex: none;
-                height: auto;
-                text-align: center;
-                padding: 20px;
-                min-height: 400px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                border-radius: 15px;
-                max-width: 400px;
-                background: rgba(255, 255, 255, 0.15);
-                -webkit-backdrop-filter: blur(10px);
-                backdrop-filter: blur(10px);
-                box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .hobby-content .programming,
-            .hobby-content .cybersecurity,
-            .hobby-content .films,
-            .hobby-content .books {
-                width: 78%;
             }
 
             main #about .about-content {
@@ -553,10 +511,6 @@
             main #about img {
                 width: 50%;
             }
-
-            main #my_hobbies .all_hobbies .hobby {
-                width: 90%;
-            }
         }
 
         @media screen and (max-width: 700px) {
@@ -566,21 +520,8 @@
         }
 
         @media screen and (max-width: 521px) {
-
-            .hobby-content .programming,
-            .hobby-content .cybersecurity,
-            .hobby-content .films,
-            .hobby-content .books {
-                width: 98%;
-            }
-
             header nav ul {
                 gap: 1rem;
-            }
-
-            main #my_hobbies h2.main_text::before,
-            main #my_hobbies h2.main_text::after {
-                width: 18vw;
             }
 
             header nav {
@@ -590,21 +531,26 @@
 
             header nav ul li a {
                 font-size: 1rem;
-                /* border: 1px solid #000; */
+            }
+
+            main #about .about-content {
+                width: 90%;
+                padding: 2em;
+            }
+
+            main #about img {
+                width: 50%;
             }
         }
 
-        /* 🔹 Telefony pionowo (< 480px) */
         @media screen and (max-width: 480px) {
             header {
                 height: 100vh;
                 padding: 0;
                 width: 100vw;
-                /* border: 1px solid white; */
             }
 
             header nav {
-                /* border: 1px solid white; */
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
@@ -622,75 +568,50 @@
                 font-size: 22px;
             }
 
-            .top {
-                /* border: 1px solid red; */
+            section.top {
                 padding: 0;
                 width: 100%;
             }
 
-            .top .top-content {
+            section.top .top-content {
                 width: 100% !important;
                 padding: 0;
-                /* border: 1px solid white; */
             }
 
-            .top .top-content h2 {
-                /* width: 100%; */
-                /* border: 1px solid white; */
+            section.top .top-content h2 {
                 font-size: 1.7rem;
             }
 
-            .top .top-content h3 {
+            section.top .top-content h3 {
                 font-size: 1.1rem;
             }
 
             main #about {
-                /* border: 1px solid white; */
                 flex-direction: column;
                 text-align: center;
                 height: auto;
                 gap: 3em;
-                /* padding: 2em; */
-            }
-
-            main #about::before,
-            main #about::after {
-                display: none;
             }
 
             main #about .image {
-                /* border: 1px solid white; */
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
 
-            main #about .image::before {
-                left: 50%;
-                transform: translateX(-50%);
-                top: -2em;
-            }
-
             main #about .image img {
-                /* border: 1px solid white; */
                 width: 80%;
             }
 
             main #about .about-content {
                 width: 100%;
                 padding: 0;
-                /* border: 1px solid #000; */
             }
 
             main #about .about-content p {
                 width: 100%;
-                /* border: 1px solid #000; */
                 padding: 0;
                 font-size: 0.9rem;
-            }
-
-            main #about .about-content::before {
-                display: none;
             }
 
             main #fav_planes h2.main_text {
@@ -702,14 +623,13 @@
                 width: 15%;
             }
 
-            #atc {
+            main #atc {
                 min-height: 100vh;
                 height: auto !important;
                 padding: 1em 0;
-                /* border: 1px solid red; */
             }
 
-            #atc p {
+            main #atc p {
                 font-size: 1.2rem !important;
                 line-height: 1.2;
                 font-weight: 300;
@@ -720,7 +640,7 @@
         }
 
         @media screen and (max-width: 390px) {
-            #fav_planes .planes .plane {
+            main #fav_planes .planes .plane {
                 width: 90%;
             }
         }
