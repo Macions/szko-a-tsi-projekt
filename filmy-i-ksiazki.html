@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmy i książki</title>
-    <link rel="shortcut icon" href="https://macions.github.io/szko-a-tsi-projekt/obrazy/website-icon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet">
+    <link rel="shortcut icon" href="https://macions.github.io/szko-a-tsi-projekt/obrazy/website-icon.png"
+        type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet">
 
     <style>
         :root {
@@ -329,8 +332,11 @@
             color: white;
         }
 
-        /* 🔹 Ekrany większe niż 1200px (np. szerokie monitory) */
         @media screen and (min-width: 1200px) {
+            header .top .top-content h1 {
+            font-size: 3.5rem;
+            }
+
             main #about_hobby .about-content {
             width: 45%;
             padding: 4em 2em;
@@ -339,16 +345,15 @@
             main #about_hobby .images img {
             width: 50%;
             }
-
-            .top .top-content h1 {
-            font-size: 3.5rem;
-            }
         }
 
-        /* 🔹 Tablety i laptopy (768px – 1199px) */
         @media screen and (max-width: 1199px) {
             header nav ul {
             gap: 2rem;
+            }
+
+            header .top .top-content h1 {
+            font-size: 3rem;
             }
 
             main #about_hobby {
@@ -358,28 +363,52 @@
             height: auto;
             }
 
-            main #about_hobby .about-content::before{
-                display: none;
-            }
-
-            main #about_hobby .about-content::after {
-                display: none;
-            }
-            
             main #about_hobby .about-content {
             width: 80%;
+            }
+
+            main #about_hobby .about-content::before,
+            main #about_hobby .about-content::after {
+            display: none;
             }
 
             main #about_hobby .images img {
             width: 50%;
             }
+        }
 
-            .top .top-content h1 {
-            font-size: 3rem;
+        @media screen and (max-width: 1000px) {
+            #fav_films .films .film,
+            #fav_books .books .book {
+            flex-direction: column !important;
+            width: 95vw;
+            justify-content: center;
+            align-items: center;
+            }
+
+            #fav_films .films .film .content,
+            #fav_books .books .book .content {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            }
+
+            #fav_films .films .film .content h4.title,
+            #fav_books .books .book .content h4.title {
+            font-size: 2rem !important;
+            text-align: center;
+            }
+
+            #fav_films .films .film .content a {
+            width: auto;
+            padding: 0.3em 0.7em;
+            text-align: center;
             }
         }
 
-        /* 🔹 Telefony poziomo (480px – 767px) */
         @media screen and (max-width: 767px) {
             header {
             height: 80vh;
@@ -394,7 +423,7 @@
             gap: 2.7rem;
             }
 
-            .top .top-content h1 {
+            header .top .top-content h1 {
             font-size: 2.5rem;
             }
 
@@ -407,8 +436,8 @@
             width: 50%;
             }
 
-            .content h4.title{
-                font-size: 1rem !important;
+            .content h4.title {
+            font-size: 1rem !important;
             }
         }
 
@@ -428,7 +457,6 @@
             }
         }
 
-        /* 🔹 Telefony pionowo (< 480px) */
         @media screen and (max-width: 480px) {
             header {
             height: 100vh;
@@ -450,19 +478,11 @@
             font-size: 22px;
             }
 
-            .top .top-content h1 {
-            font-size: 1.7rem;
-            }
-
             main #about_hobby {
             flex-direction: column;
             text-align: center;
             height: auto;
             gap: 2em;
-            }
-
-            main #about_hobby .images img {
-            width: 100%;
             }
 
             main #about_hobby .about-content {
@@ -480,6 +500,10 @@
             display: none;
             }
 
+            main #about_hobby .images img {
+            width: 100%;
+            }
+
             main #fav_books h3.section-title,
             main #fav_films h3.section-title {
             font-size: 2rem !important;
@@ -487,44 +511,40 @@
             }
 
             main #fav_books h3.section-title::before,
-        main #fav_books h3.section-title::after,
-        main #fav_films h3.section-title::before,
-        main #fav_films h3.section-title::after {
+            main #fav_books h3.section-title::after,
+            main #fav_films h3.section-title::before,
+            main #fav_films h3.section-title::after {
             width: 12%;
-        }
-
-
+            }
 
             #fav_films .films .film,
             #fav_books .books .book {
-                flex-direction: column !important;
-                width: 95vw;
-                justify-content: center;
-                align-items: center;
+            flex-direction: column !important;
+            width: 95vw;
+            justify-content: center;
+            align-items: center;
             }
 
             #fav_films .films .film .content,
             #fav_books .books .book .content {
-                /* border: 1px solid #000; */
-                max-width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             }
 
             #fav_films .films .film .content h4.title,
             #fav_books .books .book .content h4.title {
-                font-size: 2rem !important;
-                text-align: center;
-                /* border: 1px solid #000; */
+            font-size: 2rem !important;
+            text-align: center;
             }
-            
+
             #fav_films .films .film .content a {
-                width: auto;
-                padding: 0.3em 0.7em;
-                text-align: center;
+            width: auto;
+            padding: 0.3em 0.7em;
+            text-align: center;
             }
         }
     </style>
@@ -595,7 +615,8 @@
                     </div>
                     <div class="content">
                         <h4 class="title"><q>Kingsman</q></h2>
-                        <a href="https://www.filmweb.pl/film/Kingsman%3A+Tajne+s%C5%82u%C5%BCby-2014-682272">Filmweb</a>
+                            <a
+                                href="https://www.filmweb.pl/film/Kingsman%3A+Tajne+s%C5%82u%C5%BCby-2014-682272">Filmweb</a>
                     </div>
                 </div>
             </div>
@@ -625,7 +646,8 @@
                 <div class="book">
                     <div class="image">
                         <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy - filmy i książki/Gdzie-jest-skrytka-generala-Grota_book.jpeg"
-                            alt="Okładka książki 'Gdzie jest skrytka generała Grota?'" title="Książka Gdzie jest skrytka generała Grota?">
+                            alt="Okładka książki 'Gdzie jest skrytka generała Grota?'"
+                            title="Książka Gdzie jest skrytka generała Grota?">
                     </div>
                     <div class="content">
                         <h4 class="title"><q>Gdzie jest skrytka generała Grota?</q></h2>
