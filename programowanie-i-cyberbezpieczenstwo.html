@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programowanie i cyberbezpieczeństwo</title>
-    <link rel="shortcut icon" href="https://macions.github.io/szko-a-tsi-projekt/obrazy/website-icon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet">
+    <link rel="shortcut icon" href="https://macions.github.io/szko-a-tsi-projekt/obrazy/website-icon.png"
+        type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet">
 
     <style>
         :root {
@@ -402,6 +405,318 @@
             background-color: var(--footer-bg);
             color: var(--footer-text-color);
         }
+
+        @media screen and (min-width: 1200px) {
+            header .top .top-content h2 {
+                font-size: 3.5rem;
+            }
+
+            main #about_hobby .about-content {
+                width: 45%;
+                padding: 4em 2em;
+            }
+
+            main #about_hobby .image img {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 1199px) {
+            nav ul {
+                gap: 2rem;
+            }
+
+            section#cybersecurity::before,
+            section#cybersecurity::after {
+                display: none;
+            }
+
+            header {
+                overflow: hidden;
+            }
+
+            section.top .top-content h2 {
+                font-size: 3rem;
+            }
+
+            section#about_hobby {
+                flex-direction: column;
+                text-align: center;
+                min-height: 100vh;
+                height: auto;
+            }
+
+            section#about_hobby .about-content {
+                width: 80%;
+            }
+
+            section#about_hobby .about-content::before,
+            section#about_hobby .about-content::after {
+                display: none;
+            }
+
+            section#about_hobby .image img {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            section#selected_projects .projects .project {
+                flex-direction: column !important;
+                width: 95vw;
+                justify-content: center;
+                align-items: center;
+            }
+
+            section#selected_projects .projects .project .text_content {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            section#selected_projects .projects .project h3 {
+                font-size: 2rem !important;
+                text-align: center;
+            }
+
+            section#selected_projects .projects .project p {
+                width: auto;
+                padding: 0.3em 0.7em;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            header {
+                height: 80vh;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                gap: 2.7rem;
+            }
+
+            section.top .top-content h2 {
+                font-size: 2.5rem;
+            }
+
+            section#about_hobby .about-content {
+                width: 90%;
+                padding: 2em;
+            }
+
+            section#about_hobby .image img {
+                width: 50%;
+            }
+
+            section#selected_projects {
+                display: flex;
+                overflow-x: hidden;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            section#selected_projects h2 {
+                max-width: 60% !important;
+                text-align: center;
+            }
+
+            section#selected_projects h2::before,
+            section#selected_projects h2::after {
+                width: 55%;
+            }
+
+            section#selected_projects h2::before {
+                left: -45%;
+            }
+
+            section#selected_projects h2::after {
+                right: -45%;
+            }
+
+            section#selected_projects .projects .project .text_content {
+                width: 100%;
+            }
+
+            section#cybersecurity .cybersecurity-content {
+                display: flex;
+                flex-direction: column;
+                gap: 2em;
+            }
+
+            section#cybersecurity .cybersecurity-content p {
+                font-size: 1.5em;
+            }
+        }
+
+        @media screen and (max-width: 700px) {
+            nav ul {
+                gap: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 546px) {
+            section#cybersecurity h2 {
+                font-size: 2.3rem;
+            }
+
+            section#cybersecurity .cybersecurity-content img {
+                width: 70%;
+            }
+        }
+
+        @media screen and (max-width: 521px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                height: 100vh;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                display: none;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .logo h1 {
+                font-size: 22px;
+            }
+
+            section#about_hobby {
+                flex-direction: column;
+                text-align: center;
+                height: auto;
+                gap: 2em;
+            }
+
+            section#about_hobby .about-content {
+                width: 100%;
+                padding: 0;
+            }
+
+            section#about_hobby .about-content p {
+                width: 100%;
+                padding: 0;
+                font-size: 1rem;
+            }
+
+            section#about_hobby .about-content::before {
+                display: none;
+            }
+
+            section#about_hobby .image img {
+                width: 70%;
+            }
+
+            section#selected_projects h2 {
+                font-size: 2rem !important;
+                max-width: 90%;
+            }
+
+            section#selected_projects h2::before,
+            section#selected_projects h2::after {
+                width: 12%;
+            }
+
+            section#selected_projects .projects .project {
+                flex-direction: column !important;
+                width: 95vw;
+                justify-content: center;
+                align-items: center;
+            }
+
+            section#selected_projects .projects .project .text_content {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            section#selected_projects .projects .project h3 {
+                font-size: 2rem !important;
+                text-align: center;
+            }
+
+            section#selected_projects .projects .project p {
+                width: auto;
+                padding: 0.3em 0.7em;
+                text-align: center;
+            }
+
+            section#cybersecurity .cybersecurity-content {
+                padding: 4rem 1rem;
+            }
+
+            section#cybersecurity p {
+                font-size: 1.2rem !important;
+            }
+        }
+
+        @media screen and (max-width: 464px) {
+            section#cybersecurity h2 {
+                font-size: 2rem;
+            }
+
+            section.top .top-content h2 {
+                font-size: 2.3rem;
+            }
+
+            section.top .top-content p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media screen and (max-width: 415px) {
+            section#cybersecurity h2 {
+                font-size: 1.8rem;
+            }
+
+            section.top .top-content h2 {
+                font-size: 2rem;
+            }
+
+            section.top .top-content p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (max-width: 365px) {
+            section#cybersecurity h2 {
+                font-size: 1.6rem;
+            }
+
+            section.top .top-content h2 {
+                font-size: 1.8rem;
+            }
+
+            section.top .top-content p {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 
@@ -430,28 +745,40 @@
     <main>
         <section id="about_hobby" aria-labelledby="about_hobby_heading">
             <div class="image">
-                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/front-end-logo_baner-photo.png" alt="Obrazek pokazujący trzy języki front-endowe - HTML, CSS, JS">
+                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/front-end-logo_baner-photo.png"
+                    alt="Obrazek pokazujący trzy języki front-endowe - HTML, CSS, JS">
             </div>
             <div class="about-content">
                 <h2 id="about_hobby_heading">O hobby</h2>
-                <p>Programowanie to moja pasja, zwłaszcza tworzenie dużych projektów zarówno po stronie front-endu, jak i back-endu. Lubię także programować w Pythonie i C++. W dziedzinie cyberbezpieczeństwa uczę się etycznego hakowania, aby lepiej zrozumieć, jak zabezpieczać systemy i sieci.</p>
+                <p>Programowanie to moja pasja, zwłaszcza tworzenie dużych projektów zarówno po stronie front-endu, jak
+                    i back-endu. Lubię także programować w Pythonie i C++. W dziedzinie cyberbezpieczeństwa uczę się
+                    etycznego hakowania, aby lepiej zrozumieć, jak zabezpieczać systemy i sieci.</p>
             </div>
         </section>
         <section id="selected_projects" aria-labelledby="selected_projects_heading">
             <h2 id="selected_projects_heading">Moje główne projekty</h2>
             <div class="projects">
                 <div class="project">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/biblioteka-witryna_screen.png" alt="Obraz przedstawiający stronę zarządzania biblioteką" title="Widok strony zarządzania biblioteką">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/biblioteka-witryna_screen.png"
+                        alt="Obraz przedstawiający stronę zarządzania biblioteką"
+                        title="Widok strony zarządzania biblioteką">
                     <div class="text_content">
                         <h3>Witryna zarządzania biblioteką</h3>
-                        <p>Projekt polegał na stworzeniu witryny internetowej, która umożliwia zarządzanie księgozbiorem biblioteki a także czytelnikami. Użytkownik może dodawać, usuwać i edytować książki, a także przeglądać listę czytelników, dodawać ich oraz usuwać, odbierać powiadomienia jeśli książka jest wypożyczona przez długi czas.</p>
+                        <p>Projekt polegał na stworzeniu witryny internetowej, która umożliwia zarządzanie księgozbiorem
+                            biblioteki a także czytelnikami. Użytkownik może dodawać, usuwać i edytować książki, a także
+                            przeglądać listę czytelników, dodawać ich oraz usuwać, odbierać powiadomienia jeśli książka
+                            jest wypożyczona przez długi czas.</p>
                     </div>
                 </div>
                 <div class="project">
-                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/lotnisko-witryna_screen.png" alt="Obraz przedstawiający stronę powiadamiania o problemach na lotnisku" title="Widok strony powiadamiania o problemach na lotnisku">
+                    <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/lotnisko-witryna_screen.png"
+                        alt="Obraz przedstawiający stronę powiadamiania o problemach na lotnisku"
+                        title="Widok strony powiadamiania o problemach na lotnisku">
                     <div class="text_content">
                         <h3>Strona powiadamiania o problemach na lotnisku</h3>
-                        <p>Projekt polegał na stworzeniu strony internetowej, która informuje o problemach na lotnisku. Użytkownik może zobaczyć informacje o awariach, alarmach itd. Każda z prac może zostać przydzielona do osób na danym stanowisku.</p>
+                        <p>Projekt polegał na stworzeniu strony internetowej, która informuje o problemach na lotnisku.
+                            Użytkownik może zobaczyć informacje o awariach, alarmach itd. Każda z prac może zostać
+                            przydzielona do osób na danym stanowisku.</p>
                     </div>
                 </div>
             </div>
@@ -459,8 +786,10 @@
         <section id="cybersecurity" aria-labelledby="cybersecurity_heading">
             <h2 id="cybersecurity_heading">Cyberbezpieczeństwo</h2>
             <div class="cybersecurity-content">
-                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/terminal_ikona.png" alt="Ikona terminalu systemu Linux" title="Ikona terminalu">
-                <p>W dziedzinie cyberbezpieczeństwa uczę się etycznego hakowania, aby lepiej zrozumieć, jak zabezpieczać systemy i sieci. Interesuje mnie także analiza logów, aby wykrywać ataki i próby włamań.</p>
+                <img src="https://macions.github.io/szko-a-tsi-projekt/obrazy/Obrazy-programowanie_cyberbezpieczenstwo/terminal_ikona.png"
+                    alt="Ikona terminalu systemu Linux" title="Ikona terminalu">
+                <p>W dziedzinie cyberbezpieczeństwa uczę się etycznego hakowania, aby lepiej zrozumieć, jak zabezpieczać
+                    systemy i sieci. Interesuje mnie także analiza logów, aby wykrywać ataki i próby włamań.</p>
             </div>
         </section>
     </main>
